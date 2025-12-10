@@ -23,20 +23,17 @@ namespace ejercicioTelegrama
         {
 
             string textoTelegrama;
-            char tipoTelegrama = 'o';
+            
             int numPalabras = 0;
             double coste;
             //Leo el telegrama
             textoTelegrama = txtTelegrama.Text;
-            // telegrama urgente?
-            if (chkUrgente.Checked)
-            {
-                tipoTelegrama = 'u';
-            }
+            
+            
             //Obtengo el número de palabras que forma el telegrama
             numPalabras = Regex.Matches(textoTelegrama, @"\b\w+\b").Count;
             //Si el telegrama es ordinario
-            if (tipoTelegrama == 'o')
+            if (radOrdinario.Checked)
             {
                 if (numPalabras <= 10)
                 {
@@ -50,7 +47,7 @@ namespace ejercicioTelegrama
             else
             //Si el telegrama es urgente
             {
-                if (tipoTelegrama == 'u')
+                if (radUrgente.Checked)
                 {
                     if (numPalabras <= 10)
                     {
